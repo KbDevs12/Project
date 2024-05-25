@@ -82,7 +82,7 @@ const Navbar = () => {
                   {menuOpen.ftik && (
                     <ul className="absolute -right-48 -top-0 w-48 bg-white text-black">
                       <li className="w-full border-t border-gray-200 hover:bg-gray-500 hover:text-white transition-all duration-300">
-                        <Link href={""}>
+                        <Link href={"/information-engineering"}>
                           <span className="block py-2 px-4 cursor-pointer">
                             Information Engineering
                           </span>
