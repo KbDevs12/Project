@@ -9,16 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
+    "embla-carousel": "^8.1.3",
     "embla-carousel-autoplay": "^8.1.3",
+    "embla-carousel-class-names": "^8.1.3",
+    "embla-carousel-react": "^8.1.3",
     "hamburger-react": "^2.5.1",
+    "keen-slider": "^6.8.6",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-slick": "^0.23.13",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
