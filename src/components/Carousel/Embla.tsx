@@ -5,10 +5,10 @@ import ClassNames from "embla-carousel-class-names";
 import useEmblaCarousel from "embla-carousel-react";
 
 const images = [
-  "https://source.unsplash.com/random/800x600",
-  "https://source.unsplash.com/random/800x601",
-  "https://source.unsplash.com/random/800x602",
-  "https://source.unsplash.com/random/800x603",
+  "https://source.unsplash.com/random/800x600?campus",
+  "https://source.unsplash.com/random/800x601?campus",
+  "https://source.unsplash.com/random/800x602?campus",
+  "https://source.unsplash.com/random/800x603?campus",
 ];
 
 const EmblaCarousel = () => {

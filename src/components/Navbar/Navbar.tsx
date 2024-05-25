@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Spiral as Hamburger } from "hamburger-react";
 
 const Navbar = () => {
@@ -10,13 +10,35 @@ const Navbar = () => {
     navOpen: false,
     ftik: false,
   });
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const projectSection = document.getElementById("project");
+      if (projectSection) {
+        if (window.scrollY > projectSection.offsetTop) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleNavMenu = () => {
     setMenuOpen({ ...menuOpen, navOpen: !menuOpen.navOpen });
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-md py-4 md:py-0 px-4 flex items-center justify-between z-50">
+    <header
+      className={` ${
+        isScrolled ? " bg-indigo-950" : ""
+      } fixed top-0 left-0 right-0 shadow-md py-4 md:py-0 px-4 flex items-center justify-between z-50 transition-colors duration-300`}
+    >
       <Link href="">
         <span className="font-bold text-2xl text-gray-500 cursor-pointer">
           logo
@@ -58,8 +80,8 @@ const Navbar = () => {
                     </span>
                   </Link>
                   {menuOpen.ftik && (
-                    <ul className="absolute -right-48 top-0 w-48 bg-white text-black">
-                      <li className="w-full border-b border-gray-200 hover:bg-gray-500 hover:text-white transition-all duration-300">
+                    <ul className="absolute -right-48 -top-0 w-48 bg-white text-black">
+                      <li className="w-full border-t border-gray-200 hover:bg-gray-500 hover:text-white transition-all duration-300">
                         <Link href={""}>
                           <span className="block py-2 px-4 cursor-pointer">
                             Information Engineering
